@@ -1,0 +1,23 @@
+{
+  "name": "mailchimp-node-api",
+  "version": "0.0.1",
+  "description": "Sample mailchimp node.js api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "axios": "^0.23.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
