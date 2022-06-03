@@ -5,16 +5,16 @@ This repo serves as a base source of truth for building out a simple node.js api
 Recommedation: [Glitch](https://www.glitch.me)
 
 ## .env
-`shell
+```shell
 API_KEY=xxxxxx-yyy
 DC=yyy
 LIST_ID=zzzzz
-`
+```
 
 
 ## .gitignore
-`shell
+```shell
 .glitchdotcom.json
 .node-gyp
 node_modules
-`
+```
