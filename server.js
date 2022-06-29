@@ -5,7 +5,14 @@ const cors = require("cors");
 async function addToList(req, res) {
   try {
     const url = `https://${process.env.DC}.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members`;
-    await axios.post(url, req.body, {
+    const { fname, lname, ...body } = req.body
+    await axios.post(url, {
+      ...body,
+      merge_fields: {
+        FNAME: fname,
+        LNAME: lname,
+      }
+    }, {
       headers: {
         Authorization: `apiKey ${process.env.API_KEY}`
       }
@@ -14,8 +21,11 @@ async function addToList(req, res) {
       message: "Added to list"
     });
   } catch (err) {
-    const { status=500, data={message: 'Server Error'} } = err.response || {};
-    res.status(status).send(data);
+    const { status=500, data={message: 'Server Error'}, detail } = err.response || {};
+    res.status(status).send({
+      ...data,
+      message: detail || data.message
+    });
   }
 }
 
@@ -24,7 +34,7 @@ const server = express();
 server.use(express.json());
 server.use(
   cors({
-    origin: ['live-domain-of-frontend-app'],
+    origin: [], // whitelist domains here
     credentials: true
   })
 );
