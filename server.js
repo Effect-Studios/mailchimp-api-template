@@ -5,7 +5,10 @@ const cors = require("cors");
 async function addToList(req, res) {
   try {
     const url = `https://${process.env.DC}.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members`;
-    await axios.post(url, req.body, {
+    await axios.post(url, {
+      ...req.body,
+      status: 'subscribed'
+    }, {
       headers: {
         Authorization: `apiKey ${process.env.API_KEY}`
       }
