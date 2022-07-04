@@ -10,11 +10,3 @@ API_KEY=xxxxxx-yyy
 DC=yyy
 LIST_ID=zzzzz
 ```
-
-
-## .gitignore
-```shell
-.glitchdotcom.json
-.node-gyp
-node_modules
-```
