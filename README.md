@@ -1,5 +1,5 @@
 # Sample Node.js Mailchimp api
-This repo serves as a base source of truth for building out a simple node.js api for mailchimp integration on any frontend application
+This repo serves as a base source of truth for building out a simple node.js api for mailchimp integration
 
 ## Hosting
 Recommedation: [Glitch](https://www.glitch.me)
