@@ -10,3 +10,16 @@ API_KEY=xxxxxx-yyy
 DC=yyy
 LIST_ID=zzzzz
 ```
+
+## Sample body payload
+```json
+{
+  "email_address": "email",
+  "merge_fields": {
+    "FNAME": "fname",
+    "LNAME": "lname",
+    "PHONE": "tel"
+  }
+}
+```
+https://mailchimp.com/developer/marketing/docs/merge-fields/
